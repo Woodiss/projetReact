@@ -12,10 +12,12 @@ function PreviewMarkdown({ markdowns, onUpdateMarkdown }) {
   const markdown = markdowns.find(({ id }) => (id === markdownid));
 
   const [content, setContent] = useState('');
+  const [title, setTitle] = useState('');
 
   useEffect(() => {
     if (markdown) {
       setContent(markdown.content);
+      setTitle(markdown.title);
     }
   }, [markdown]);
 
@@ -23,22 +25,12 @@ function PreviewMarkdown({ markdowns, onUpdateMarkdown }) {
 
   var converter = new showdown.Converter();
   // convertie "markdown" en html grace a "converter"
-  var html = converter.makeHtml(markdown.content);
+  var html = converter.makeHtml(content);
 
   function updateMarkdown(e) {
     e.preventDefault();
     // appeler la fonction de mise à jour fournie via les props
-    onUpdateMarkdown(markdownid, content);
-  }
-
-  function downloadMarkdown() {
-    const blob = new Blob([content], { type: 'text/markdown' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${markdown.title}.md`;
-    a.click();
-    URL.revokeObjectURL(url);
+    onUpdateMarkdown(markdown.id, title, content);
   }
 
   function downloadMarkdown() {
@@ -67,6 +59,7 @@ function PreviewMarkdown({ markdowns, onUpdateMarkdown }) {
     <div className="container" style={{ display: 'flex' }}>
       <div>
         <form onSubmit={updateMarkdown}>
+          <input type="text" placeholder='titre' value={title} onChange={(e) => setTitle(e.target.value)}/>
         <textarea value={content} 
             onChange={(e) => setContent(e.target.value)}
           />

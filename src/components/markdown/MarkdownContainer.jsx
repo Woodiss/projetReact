@@ -4,7 +4,7 @@ import ListeMarkdowns from './listemarkdowns/ListeMarkdowns'
 import FormMarkdown from './formmarkdown/FormMarkdown';
 import PreviewMarkdown from './previwmarkdown/PreviewMarkdown';
 
-function MarkdownContainer({ markdowns }) {
+function MarkdownContainer({ markdowns, onUpdateMarkdown }) {
   const { markdownid } = useParams();
 
   return (
@@ -16,7 +16,7 @@ function MarkdownContainer({ markdowns }) {
         <>
           <div className="preview">
             <p>yolooo</p>
-          <PreviewMarkdown markdowns={markdowns} />
+          <PreviewMarkdown markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} />
           </div>
         </>
       )}

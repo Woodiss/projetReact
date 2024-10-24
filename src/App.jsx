@@ -12,10 +12,10 @@ function App() {
   const [markdowns, setMarkdowns] = useState([]);
 
   // création de markdown (via form)
-  function ajouterMarkdown(titre, content) {
+  function ajouterMarkdown(title, content) {
     setMarkdowns((prev) => ([
       ...prev,
-      { id: crypto.randomUUID(), titre, content},
+      { id: crypto.randomUUID(), title, content},
     ]));
   }
 
@@ -33,12 +33,12 @@ function App() {
       // récup le contenu
       const content = e.target.result;
       // récup le nom du fichier (remplace .md par '')
-      const titre = file.name.replace('.md', '');
+      const title = file.name.replace('.md', '');
 
       // update du state de markdowns
       setMarkdowns((prev) => [
         ...prev,
-        { id: crypto.randomUUID(), titre, content },
+        { id: crypto.randomUUID(), title, content },
       ]);
     };
 
@@ -46,13 +46,14 @@ function App() {
     reader.readAsText(file);
   }
   
-  function onUpdateMarkdown(id, newContent) {
+  function onUpdateMarkdown(id, newTitle, newContent) {
     // Met à jour la liste des markdowns
     const updatedMarkdowns = markdowns.map((markdown) => {
-      return markdown.id === id ? { ...markdown, content: newContent } : markdown;
+      return markdown.id === id ? { ...markdown, title: newTitle, content: newContent } : markdown;
     });
     setMarkdowns(updatedMarkdowns); // Mettez à jour l'état avec la nouvelle liste
   }
+
   return (
     <div>
       <h1>Les Markdown</h1>
@@ -64,24 +65,25 @@ function App() {
         {/* <nav>
           <Link to="/">Liste</Link>
           <br />
-          <Link to="creer">Ajouter</Link>
-        </nav> */}
+          </nav> */}
         <nav>
           <Link to="/dashboard">Dashboard</Link>
           <br />
           <Link to="/markdown">markdown</Link>
+          <br />
+          <Link to="creer">Ajouter</Link>
         </nav>
 
         <Routes>
           {/* Accueil / liste */}
           {/* <Route path="/" element={<ListeMarkdowns markdowns={markdowns} />} /> */}
           {/* Création */}
-          {/* <Route path="creer" element={<FormMarkdown ajouterMarkdown={ajouterMarkdown} />} /> */}
           {/* Detail */}
           {/* <Route path="markdown/:markdownid" element={<PreviewMarkdown markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown}/>} /> */}
 
-          <Route path="/markdown" element={<MarkdownContainer markdowns={markdowns}/>} />
-          <Route path="/markdown/:markdownid" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown}/>} />
+          <Route path="creer" element={<FormMarkdown ajouterMarkdown={ajouterMarkdown} />} />
+          <Route path="/markdown" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown}/>} />
+          <Route path="/markdown/:markdownid" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} />} />
         </Routes>
       </BrowserRouter>
     </div>

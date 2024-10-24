@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 function ListeMarkdowns({ markdowns }) {
+
   return (
     <div className='list'>
       <h2>Liste des markdowns</h2>
@@ -9,7 +10,7 @@ function ListeMarkdowns({ markdowns }) {
         {markdowns.map((markdown) => (
           <li key={markdown.id}>
             <Link to={`/markdown/${markdown.id}`}>
-            {markdown.titre}
+            {markdown.title}
             </Link>
           </li>
         ))}
