@@ -4,6 +4,8 @@ import ListeMarkdowns from './components/markdown/listemarkdowns/ListeMarkdowns'
 import FormMarkdown from './components/markdown/formmarkdown/FormMarkdown';
 import PreviewMarkdown from './components/markdown/previwmarkdown/PreviewMarkdown';
 import MarkdownContainer from './components/markdown/MarkdownContainer'
+import Nav from './components/nav'
+
 
 
 function App() {
@@ -56,33 +58,13 @@ function App() {
 
   return (
     <div>
-      <h1>Les Markdown</h1>
-      
-      {/* onChange > onSubmit */}
-      <input type="file" accept=".md" onChange={ajouterMarkdownViaInput}/>
-        
       <BrowserRouter>
-        {/* <nav>
-          <Link to="/">Liste</Link>
-          <br />
-          </nav> */}
-        <nav>
-          <Link to="/dashboard">Dashboard</Link>
-          <br />
-          <Link to="/markdown">markdown</Link>
-          <br />
-          <Link to="creer">Ajouter</Link>
-        </nav>
+        <Nav />
 
         <Routes>
-          {/* Accueil / liste */}
-          {/* <Route path="/" element={<ListeMarkdowns markdowns={markdowns} />} /> */}
-          {/* Création */}
-          {/* Detail */}
-          {/* <Route path="markdown/:markdownid" element={<PreviewMarkdown markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown}/>} /> */}
 
           <Route path="creer" element={<FormMarkdown ajouterMarkdown={ajouterMarkdown} />} />
-          <Route path="/markdown" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown}/>} />
+          <Route path="/markdown" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} ajouterMarkdownViaInput={ajouterMarkdownViaInput}/>} />
           <Route path="/markdown/:markdownid" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} />} />
         </Routes>
       </BrowserRouter>

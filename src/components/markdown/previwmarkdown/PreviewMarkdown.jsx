@@ -56,25 +56,27 @@ function PreviewMarkdown({ markdowns, onUpdateMarkdown }) {
   }
   
   return (
-    <div className="container" style={{ display: 'flex' }}>
-      <div>
+    <div className="preview-container">
+      <div className='markdown-box'>
+        <h2 className='markdown-h2'>Modifier markdown</h2>
         <form onSubmit={updateMarkdown}>
           <input type="text" placeholder='titre' value={title} onChange={(e) => setTitle(e.target.value)}/>
-        <textarea value={content} 
-            onChange={(e) => setContent(e.target.value)}
-          />
+          <textarea spellcheck="false" value={content} onChange={(e) => setContent(e.target.value)}/>
           <button type='submit'>Mettre a jour</button>
         </form>
       </div>
-      <div>
-        <h2>Détails</h2>
-          <button onClick={downloadMarkdown}>Télécharger</button>
-        <ul>
-          {/* Source: IA  (affiche le contenu HTML */}
-          <li dangerouslySetInnerHTML={{ __html: html }}></li>
-          <li>{markdown.content}</li>
-        </ul>
+      <div className='markdown-box'>
+        <div className='top-preview'>
+          <h2 className='markdown-h2'>Prévisualisation</h2>
+        </div>
+
+        {/* Source: IA  (affiche le contenu HTML */}
+        <div className='preview' dangerouslySetInnerHTML={{ __html: html }}></div>
+        <button onClick={downloadMarkdown}>Télécharger</button>
+
       </div>
+
+      
     </div>
   );
 }
