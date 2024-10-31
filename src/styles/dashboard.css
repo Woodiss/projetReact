@@ -1,0 +1,313 @@
+#root > div{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.dashboard-container .top-dashbord {
+    display: flex;
+    gap: 10px;
+}
+
+.left-dashbord {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.markdown-tool .list {
+    width: 20%;
+}
+
+.markdown-tool .list label {
+    width: auto;
+}
+
+.markdown-tool {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+
+.markdown-tool div:nth-of-type(2) {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.markdown-tool form input {
+    padding: 5px;
+}
+
+.markdown-tool form button {
+    padding: 5px;
+}
+
+.markdown-tool h2, .markdown-h2 {
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.markdown-tool form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.markdown-tool form textarea {
+    height: 100%;
+    resize: none;
+    padding: 5px;
+}
+
+.dashboard-container .right-dashbord{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboard-container .right-dashbord .child-right-dashbord {
+    display: flex;
+    gap: 10px;
+}
+
+.dashboard-container .right-dashbord .child-right-dashbord:nth-of-type(2){
+    flex: 1;
+}
+
+.child-right-dashbord > div {
+    width: 50%;
+}
+
+img {
+    width: 100px;
+}
+
+.top-dashbord {
+    height: 500px;
+    margin-bottom: 15px;
+}
+
+.dashboard-container > .useless {
+    flex: 1;
+}
+
+.top-dashbord > div {
+    width: 50%;
+  
+}
+.date-color {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+}
+
+.useless {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.useless > div {
+    padding: 10px;
+}
+
+.useless > div:nth-of-type(2){
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.useless h4 {
+    background: var(--secondary-color);
+    color: white;
+    padding:8px;
+    text-align: center;
+}
+
+.dashboard-container > .useless ul{
+    padding: 13px;
+    list-style: none;
+    display: flex;
+    flex-direction: column; 
+    gap: 7px;
+}
+
+.chute {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3px 5px;
+}
+
+.chute img {
+    width: 2rem;
+}
+
+.chute::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+
+}
+
+.chute:hover::after {
+    background-color: transparent;
+    transition: 1s all;
+}
+
+.useless  h2 {
+    text-align: center;
+}
+
+.emoji{
+    display: flex;
+    background: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+}
+.emoji img {
+    width: 25px;
+    height: 25px;
+}
+
+.mocktail-img h2{
+    display: flex;
+    justify-content: center;
+}
+
+.mocktail-img img{
+    width: 230px;
+    margin: auto;
+}
+
+.card img {
+    width: 200px;
+}
+
+/* dialog recette */
+.useless .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+dialog {
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+}
+
+dialog header {
+    text-align: center;
+}
+
+dialog h3 {
+    margin-top: 10px;
+}
+
+dialog div p {
+    max-width: 700px;
+}
+
+dialog button.close {
+    display: block;
+    margin: auto;
+    padding: 7px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1600px) {
+    .markdown-tool .list {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .top-dashbord {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .top-dashbord > div {
+        width: 100%;
+    }
+
+    .markdown-tool {
+        flex: auto;
+        height: 300px;
+    }
+
+    .dashboard-container .right-dashbord .child-right-dashbord {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .child-right-dashbord {
+        flex-direction: column;
+    }
+
+    .child-right-dashbord > div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    nav {
+        padding: 0px 10px!important;
+    }
+
+    nav div:nth-last-of-type(1) {
+        display: flex;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    .markdown-tool {
+        flex-direction: column;
+        /* height: auto; */
+        height: 800px;
+    }
+
+    .markdown-tool .list {
+        width: 100%;
+        height: 300px;
+    }
+
+}
+
+@media screen and (max-width: 310px) {
+    nav {
+        flex-direction: column;
+    }
+}

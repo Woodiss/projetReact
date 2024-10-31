@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import ListeMarkdowns from './components/markdown/listemarkdowns/ListeMarkdowns'
-import FormMarkdown from './components/markdown/formmarkdown/FormMarkdown';
-import PreviewMarkdown from './components/markdown/previwmarkdown/PreviewMarkdown';
+import DashboardContainer from './components/Dashboard/DashboardContainer';
 import MarkdownContainer from './components/markdown/MarkdownContainer'
 import Nav from './components/nav'
+import "./styles/reset.css";
+import './styles/global.css';
 
 
 
@@ -23,6 +23,7 @@ function App() {
 
   // creation de markdown (via input)
   function ajouterMarkdownViaInput(event) {
+    console.log("function")
     // event = l'évenement transmit avec masse informations notamment le target.files
     console.log(event);
     
@@ -37,15 +38,22 @@ function App() {
       // récup le nom du fichier (remplace .md par '')
       const title = file.name.replace('.md', '');
 
-      // update du state de markdowns
+      // update de markdowns
       setMarkdowns((prev) => [
         ...prev,
         { id: crypto.randomUUID(), title, content },
       ]);
     };
 
-    // Lire le fichier en tant que texte
+    // lire le fichier en tant que texte
     reader.readAsText(file);
+
+    event.target.value = ''
+  }
+
+  function supprimerMarkdown(id) {
+    const updatedMarkdowns = markdowns.filter((markdown) => markdown.id !== id);
+    setMarkdowns(updatedMarkdowns);
   }
   
   function onUpdateMarkdown(id, newTitle, newContent) {
@@ -62,10 +70,9 @@ function App() {
         <Nav />
 
         <Routes>
-
-          <Route path="creer" element={<FormMarkdown ajouterMarkdown={ajouterMarkdown} />} />
-          <Route path="/markdown" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} ajouterMarkdownViaInput={ajouterMarkdownViaInput}/>} />
-          <Route path="/markdown/:markdownid" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} />} />
+          <Route path="/markdown" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} ajouterMarkdownViaInput={ajouterMarkdownViaInput} supprimerMarkdown={supprimerMarkdown}/> } />
+          <Route path="/markdown/:markdownid" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} ajouterMarkdownViaInput={ajouterMarkdownViaInput} supprimerMarkdown={supprimerMarkdown}/>} />
+          <Route path="/" element={<DashboardContainer markdowns={markdowns} ajouterMarkdownViaInput={ajouterMarkdownViaInput} ajouterMarkdown={ajouterMarkdown} supprimerMarkdown={supprimerMarkdown}/>}/>
         </Routes>
       </BrowserRouter>
     </div>

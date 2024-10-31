@@ -1,20 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Link, Route, Routes, useParams } from 'react-router-dom';
-import ListeMarkdowns from './listemarkdowns/ListeMarkdowns'
-import FormMarkdown from './formmarkdown/FormMarkdown';
-import PreviewMarkdown from './previwmarkdown/PreviewMarkdown';
-import '../../style/reset.css'
-import '../../style/style.css'
+import ListeMarkdowns from './ListeMarkdowns/ListeMarkdowns';
+import PreviewMarkdown from './PreviwMarkdown/PreviewMarkdown';
+import '../../styles/markdown.css'
 
-function MarkdownContainer({ markdowns, onUpdateMarkdown, ajouterMarkdownViaInput }) {
+function MarkdownContainer({ markdowns, onUpdateMarkdown, ajouterMarkdownViaInput, supprimerMarkdown }) {
   const { markdownid } = useParams();
 
   return (
     <div className='markdown-container'>
-      <h1>Editeur de markdown</h1>
+      <div className='top-markdown'>
+        <h2>Editeur de markdown</h2>
+      </div>
       <div>
         
-        <ListeMarkdowns markdowns={markdowns} ajouterMarkdownViaInput={ajouterMarkdownViaInput}/>
+        <ListeMarkdowns markdowns={markdowns} ajouterMarkdownViaInput={ajouterMarkdownViaInput} supprimerMarkdown={supprimerMarkdown}/>
 
         {/* affiche si id est trouver */}
         {markdownid && (

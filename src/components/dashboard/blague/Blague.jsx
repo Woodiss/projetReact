@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-
-function App() {
+import rigole from "../../../images/rigole.png";
+import rire from '../../../images/blague.png'
+function Blague() {
   const [blague, setBlague] = useState({});
 
   useEffect(() => {
@@ -15,14 +16,23 @@ function App() {
   }
 
   return (
-    <div>
-      <p>Voici une blague :</p>
-      <ul>
-        <li>setup : {blague.setup}</li>
-        <li>punchline : {blague.punchline}</li>
-      </ul>
+    <div className='useless'>
+      <div className='emoji'>
+        <img src={rire} alt="blague" />
+        <h4>Voici une blague</h4>
+        <img src={rire} alt="blague" />
+      </div>
+      <div>
+        <p>{blague.setup}</p>
+        <p>Chute :</p>
+        <div className='chute'>
+          <img src={rigole} alt="rigole" />
+          <p>{blague.punchline}</p>
+          <img src={rigole} alt="rigole" />
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Blague;
