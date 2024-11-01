@@ -92,7 +92,7 @@ nav ul a {
 
 .list ul a {
     color: black;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 .list label {

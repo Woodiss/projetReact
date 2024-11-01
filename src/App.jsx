@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import ListeMarkdowns from './components/markdown/listemarkdowns/ListeMarkdowns'
-import FormMarkdown from './components/markdown/formmarkdown/FormMarkdown';
-import PreviewMarkdown from './components/markdown/previwmarkdown/PreviewMarkdown';
+import DashboardContainer from './components/Dashboard/DashboardContainer';
 import MarkdownContainer from './components/markdown/MarkdownContainer'
 import Nav from './components/nav'
+import "./styles/reset.css";
+import './styles/global.css';
 
 
 
@@ -62,10 +62,9 @@ function App() {
         <Nav />
 
         <Routes>
-
-          <Route path="creer" element={<FormMarkdown ajouterMarkdown={ajouterMarkdown} />} />
           <Route path="/markdown" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} ajouterMarkdownViaInput={ajouterMarkdownViaInput}/>} />
           <Route path="/markdown/:markdownid" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} />} />
+          <Route path="/" element={<DashboardContainer markdowns={markdowns} ajouterMarkdownViaInput={ajouterMarkdownViaInput} ajouterMarkdown={ajouterMarkdown}/>}/>
         </Routes>
       </BrowserRouter>
     </div>

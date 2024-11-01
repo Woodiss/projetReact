@@ -1,0 +1,190 @@
+#root > div{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.dashboard-container .top-dashbord {
+    display: flex;
+    gap: 10px;
+}
+
+.left-dashbord {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list {
+    width: 20%!important;
+}
+
+.list label {
+    /* margin: 10px!important; */
+    width: auto!important;
+}
+
+.markdown-tool {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+
+.markdown-tool div:nth-of-type(2) {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.markdown-tool form input {
+    padding: 5px;
+}
+
+.markdown-tool form button {
+    padding: 5px;
+}
+
+.markdown-tool h2, .markdown-h2 {
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.markdown-tool form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    
+}
+
+.markdown-tool form textarea {
+    height: 100%;
+    resize: none;
+    padding: 5px;
+}
+
+.dashboard-container .right-dashbord{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboard-container .right-dashbord .child-right-dashbord {
+    display: flex;
+    gap: 10px;
+    height: 50%;
+}
+
+.child-right-dashbord > div {
+    width: 50%;
+}
+
+img {
+    width: 100px;
+}
+
+.top-dashbord {
+    height: 500px;
+    margin-bottom: 15px;
+}
+
+.dashboard-container > .useless {
+    flex: 1;
+}
+
+.top-dashbord > div {
+    width: 50%;
+  
+}
+.date-color {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+}
+
+.useless {
+    border: 1px solid black;
+
+}
+
+.useless > div {
+    padding: 10px;
+}
+
+.useless h4 {
+    background: var(--secondary-color);
+    color: white;
+    padding:8px;
+    text-align: center;
+}
+
+.dashboard-container > .useless ul{
+    padding: 13px;
+    list-style: none;
+    display: flex;
+    flex-direction: column; 
+    gap: 7px;
+}
+
+.chute {
+    position: relative;
+}
+.chute img {
+    width: 2rem;
+}
+
+.chute::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+
+}
+
+.chute:hover::after {
+    background-color: transparent;
+    transition: 1s all;
+}
+
+.useless  h2 {
+    text-align: center;
+}
+
+.emoji{
+    display: flex;
+    background: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+}
+.emoji img {
+    width: 25px;
+    height: 25px;
+}
+
+.mocktail-img h2{
+    display: flex;
+    justify-content: center;
+}
+
+.mocktail-img img{
+    width: 150px;
+    margin: auto;
+}
+
+@media screen and (max-width: 380px) {
+
+}

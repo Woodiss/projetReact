@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { BrowserRouter, Link, Route, Routes, useParams } from 'react-router-dom';
-import ListeMarkdowns from './listemarkdowns/ListeMarkdowns'
-import FormMarkdown from './formmarkdown/FormMarkdown';
-import PreviewMarkdown from './previwmarkdown/PreviewMarkdown';
-import '../../style/reset.css'
-import '../../style/style.css'
+import ListeMarkdowns from './ListeMarkdowns/ListeMarkdowns';
+import FormMarkdown from './FormMarkdown/FormMarkdown';
+import PreviewMarkdown from './PreviwMarkdown/PreviewMarkdown';
+import '../../styles/markdown.css'
 
 function MarkdownContainer({ markdowns, onUpdateMarkdown, ajouterMarkdownViaInput }) {
   const { markdownid } = useParams();
