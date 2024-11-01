@@ -88,6 +88,7 @@ nav ul a {
 
 .list ul {
     list-style: none;
+    padding: 10px;
 }
 
 .list ul a {
