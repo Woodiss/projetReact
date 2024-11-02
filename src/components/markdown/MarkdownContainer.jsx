@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Link, Route, Routes, useParams } from 'react-router-dom';
 import ListeMarkdowns from './ListeMarkdowns/ListeMarkdowns';
 import FormMarkdown from './FormMarkdown/FormMarkdown';
@@ -10,7 +10,9 @@ function MarkdownContainer({ markdowns, onUpdateMarkdown, ajouterMarkdownViaInpu
 
   return (
     <div className='markdown-container'>
-      <h1>Editeur de markdown</h1>
+      <div className='top-markdown'>
+        <h2>Editeur de markdown</h2>
+      </div>
       <div>
         
         <ListeMarkdowns markdowns={markdowns} ajouterMarkdownViaInput={ajouterMarkdownViaInput}/>

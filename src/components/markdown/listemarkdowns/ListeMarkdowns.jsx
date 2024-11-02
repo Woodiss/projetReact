@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function ListeMarkdowns({ markdowns, ajouterMarkdownViaInput }) {
 
   return (
-    <div className='list markdown-box'>
+    <div className='list markdown-box list-show'>
       <h2 className='markdown-h2'>Sélectionner markdown</h2>
       <div>
           <label htmlFor="input-markdown">Ajouter un fichier</label>
