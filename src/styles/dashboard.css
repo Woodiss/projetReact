@@ -226,6 +226,10 @@ dialog h3 {
     margin-top: 10px;
 }
 
+dialog ul {
+    list-style: none;
+}
+
 dialog div p {
     max-width: 700px;
 }

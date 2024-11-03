@@ -5,7 +5,6 @@
 }
 
 nav {
-    /* height: 8vh; */
     background: var(--primary-color);
     display: flex;
     justify-content: space-between;
@@ -30,12 +29,15 @@ nav ul a {
     flex-direction: column;
     flex: 1;
     gap: 15px;
-    /* background: brown; */
     padding-bottom: 20px;
 }
 
 .preview-container .hidden-ul, .hidden-list {
     display: none;
+}
+
+.preview-container .hidden-ul li {
+    cursor: pointer;
 }
 
 .top-markdown {
@@ -71,7 +73,6 @@ nav ul a {
 
 .markdown-container > div:nth-of-type(2) {
     display: flex;
-    /* background: pink; */
     flex: 1;
     padding: 20px;
     gap: 20px;
@@ -98,7 +99,6 @@ nav ul a {
 .list > div {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     gap: 10px;
     flex: 1;
 }
@@ -117,6 +117,7 @@ nav ul a {
 .list ul li img {
     height: 30px;
     width: 30px;
+    cursor: pointer;
 }
 
 .list ul a {
@@ -136,10 +137,8 @@ nav ul a {
 
 .preview-container {
     display: flex;
-    /* gap: 20px; */
     flex-direction: column;
     flex: 1;
-    /* background: red; */
 }
 
 .preview-container > ul {
@@ -177,19 +176,12 @@ nav ul a {
     padding: var(--padding);
 }
 
-.preview-container > div {
-    /* width: 42.5%; */
-    /* background: blue; */
-}
-
 .right-preview {
     height: 100%;
 }
 
 .preview {
     overflow: auto;
-    /* flex: 1; */
-    /* background: purple; */
     padding: var(--padding);
 }
 

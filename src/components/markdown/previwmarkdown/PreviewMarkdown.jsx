@@ -121,7 +121,7 @@ useEffect(() => {
             <h2 className='markdown-h2'>Prévisualisation</h2>
           </div>
 
-          {/* Source: IA  (affiche le contenu HTML */}
+          {/* Source: IA  (affiche le contenu convertie en HTML */}
           <div className='preview' dangerouslySetInnerHTML={{ __html: html }}></div>
           <button onClick={downloadMarkdown}>Télécharger</button>
 

@@ -5,8 +5,8 @@ import Blague from './Blague/Blague';
 import RecetteDuJour from './Recette/Recette';
 import Mocktail  from'./Mocktail/Mocktail';
 import HistoricalDate from './DateEvent/dateEvent';
-import ListeMarkdowns from '../MarkDown/ListeMarkdowns/ListeMarkDowns';
-import FormMarkdown from '../MarkDown/FormMarkdown/FormMarkDown';
+import ListeMarkdowns from '../Markdown/ListeMarkdowns/ListeMarkdowns.jsx';
+import FormMarkdown from '../Markdown/FormMarkdown/FormMarkDown.jsx';
 import "../../styles/dashboard.css";
 
 function DashboardContainer({ markdowns, ajouterMarkdownViaInput, ajouterMarkdown, supprimerMarkdown }) {

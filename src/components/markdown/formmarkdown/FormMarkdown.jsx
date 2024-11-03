@@ -5,18 +5,16 @@ function FormMarkdown({ ajouterMarkdown }) {
 
     const navigate = useNavigate();
 
-    // Fonctions
     function gererSubmit(e) {
         e.preventDefault();
-        // Ajoute le markdown
+        // lancement fonction avec la valeur des input en params
         ajouterMarkdown(
             e.target.titre.value,
-            e.target.content.value,
+            e.target.content.value
         );
-        // Redirige vers la page d'accueil
         navigate('/');
     }
-    // render
+    
     return (
         <div>
             <h2>Ajouter markdown</h2>
