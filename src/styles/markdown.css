@@ -115,8 +115,9 @@ nav ul a {
 
 .list label {
     padding: 10px;
-    border: 1px solid;
-    width: fit-content;
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
 }
 
 .list input {

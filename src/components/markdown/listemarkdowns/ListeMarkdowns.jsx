@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import styles from '../../../styles/md-responsive.module.css'
 
 function ListeMarkdowns({ markdowns, ajouterMarkdownViaInput }) {
 
   return (
-    <div className={`${styles.listrespon} list markdown-box list-show`}>
+    <div className='list markdown-box'>
       <h2 className='markdown-h2'>Sélectionner markdown</h2>
       <div>
           <label htmlFor="input-markdown">Ajouter un fichier</label>
