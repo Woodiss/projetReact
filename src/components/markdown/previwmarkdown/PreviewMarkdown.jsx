@@ -8,8 +8,6 @@ function PreviewMarkdown({ markdowns, onUpdateMarkdown }) {
   const { markdownid } = useParams();
   
   const markdown = markdowns.find(({ id }) => (id === markdownid));
-
-  console.log(markdown);
   
   React.useEffect(() => {
     if (markdown === undefined) {
@@ -27,8 +25,6 @@ function PreviewMarkdown({ markdowns, onUpdateMarkdown }) {
       setTitle(markdown.title);
     }
   }, [markdown]);
-
-  console.log(markdown);
 
   var converter = new showdown.Converter();
   // convertie "markdown" en html grace a "converter"

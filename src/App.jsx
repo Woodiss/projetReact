@@ -23,10 +23,7 @@ function App() {
 
   // creation de markdown (via input)
   function ajouterMarkdownViaInput(event) {
-    console.log("function")
-    // event = l'évenement transmit avec masse informations notamment le target.files
-    console.log(event);
-    
+    // event = l'évenement transmit avec masse informations notamment le target.files    
     // récup le 1er ficher sélectionner (peut être boucle pour tout récup ?)
     const file = event.target.files[0];
     const reader = new FileReader();
