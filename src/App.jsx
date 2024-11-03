@@ -50,6 +50,11 @@ function App() {
 
     event.target.value = ''
   }
+
+  function supprimerMarkdown(id) {
+    const updatedMarkdowns = markdowns.filter((markdown) => markdown.id !== id);
+    setMarkdowns(updatedMarkdowns);
+  }
   
   function onUpdateMarkdown(id, newTitle, newContent) {
     // Met à jour la liste des markdowns
@@ -65,9 +70,9 @@ function App() {
         <Nav />
 
         <Routes>
-          <Route path="/markdown" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} ajouterMarkdownViaInput={ajouterMarkdownViaInput}/>} />
-          <Route path="/markdown/:markdownid" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} ajouterMarkdownViaInput={ajouterMarkdownViaInput}/>} />
-          <Route path="/" element={<DashboardContainer markdowns={markdowns} ajouterMarkdownViaInput={ajouterMarkdownViaInput} ajouterMarkdown={ajouterMarkdown}/>}/>
+          <Route path="/markdown" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} ajouterMarkdownViaInput={ajouterMarkdownViaInput} supprimerMarkdown={supprimerMarkdown}/> } />
+          <Route path="/markdown/:markdownid" element={<MarkdownContainer markdowns={markdowns} onUpdateMarkdown={onUpdateMarkdown} ajouterMarkdownViaInput={ajouterMarkdownViaInput} supprimerMarkdown={supprimerMarkdown}/>} />
+          <Route path="/" element={<DashboardContainer markdowns={markdowns} ajouterMarkdownViaInput={ajouterMarkdownViaInput} ajouterMarkdown={ajouterMarkdown} supprimerMarkdown={supprimerMarkdown}/>}/>
         </Routes>
       </BrowserRouter>
     </div>

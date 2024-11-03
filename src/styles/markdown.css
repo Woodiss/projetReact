@@ -108,9 +108,19 @@ nav ul a {
     padding: 10px;
 }
 
+.list ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list ul li img {
+    height: 30px;
+    width: 30px;
+}
+
 .list ul a {
     color: black;
-    /* text-decoration: none; */
 }
 
 .list label {
@@ -184,6 +194,9 @@ nav ul a {
 }
 
 @media screen and (max-width: 1300px) {
+    .list {
+        width: 25%;
+    }
     .preview-container {
         gap: 20px;
     }

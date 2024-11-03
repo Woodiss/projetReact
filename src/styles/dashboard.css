@@ -227,7 +227,7 @@ dialog h3 {
 }
 
 dialog div p {
-    width: 700px;
+    max-width: 700px;
 }
 
 dialog button.close {

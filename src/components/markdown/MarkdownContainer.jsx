@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Link, Route, Routes, useParams } from 'react-router-dom';
 import ListeMarkdowns from './ListeMarkdowns/ListeMarkdowns';
-import FormMarkdown from './FormMarkdown/FormMarkdown';
 import PreviewMarkdown from './PreviwMarkdown/PreviewMarkdown';
 import '../../styles/markdown.css'
 
-function MarkdownContainer({ markdowns, onUpdateMarkdown, ajouterMarkdownViaInput }) {
+function MarkdownContainer({ markdowns, onUpdateMarkdown, ajouterMarkdownViaInput, supprimerMarkdown }) {
   const { markdownid } = useParams();
 
   return (
@@ -15,7 +14,7 @@ function MarkdownContainer({ markdowns, onUpdateMarkdown, ajouterMarkdownViaInpu
       </div>
       <div>
         
-        <ListeMarkdowns markdowns={markdowns} ajouterMarkdownViaInput={ajouterMarkdownViaInput}/>
+        <ListeMarkdowns markdowns={markdowns} ajouterMarkdownViaInput={ajouterMarkdownViaInput} supprimerMarkdown={supprimerMarkdown}/>
 
         {/* affiche si id est trouver */}
         {markdownid && (
