@@ -29,13 +29,13 @@ Ce projet est un éditeur Markdown en React qui propose une interface "old schoo
 | - ✏️ Édition et prévisualisation en HTML du fichier Markdown | ✅| |
 | - 📤 Exportation du fichier en .md  | ✅|       |
 | - 📥 Importation de fichier .md  |    ✅ | existant pour édition   |
+| - 🗑️ Ajout d'un button Supprimer | ✅ | Button supprimer pour un fichier ReadMe.Md |
 
 ## 🌟 Fonctionalités Bonus
 | 🛠️ Fonctionnalités |   📌 Disponibilité     | 💬 Commentaire       |
 |:--------------- |:-------------------:|:-----------------:|
 | - 🎉 Ajout des émojis des année 2000 | ✅| |
 | - 📱 Full Responsive | ✅| |
-| - 🗑️ Ajout d'un button Supprimer | ✅ | Button supprimer pour un fichier ReadMe.Md |
 | - 🖼️ Ajout des images dans Mocktail et Recettes | ✅ | |
 | - 📌 Ajout de la ClassActive dans la Nav | ✅ | |
 | - 🚀 déploiment du projet| ✅ | (Via Netlify 🌐)|
@@ -63,7 +63,7 @@ Ce projet est un éditeur Markdown en React qui propose une interface "old schoo
 
 ## Membres du Groupe
 - [Codandabany Devanandhan](https://github.com/MrDevaa)  - Développeur front
-- [DESCARPENTRIES Stéphane](https://github.com/Woodiss)  - Développeur front  
+- [Woodiss](https://github.com/Woodiss)  - Développeur front  
 - [DE PASQUAL Eddy Jean Christopher](https://github.com/christopherDEPASQUAL)  - Développeur front 
 - [DA ROCHA Hugo](https://github.com/Hugodrc55)  - Développeur front 
 
